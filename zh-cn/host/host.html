@@ -1,0 +1,58 @@
+<h3 class="main-title">Product Name</h3>
+
+<div class="btns yo-btns">
+    <button type="button" class="btn btn-warning">
+        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> add
+    </button>
+    <button type="button" class="btn btn-default" ng-click="del()" ng-disabled="!deleteBtn">
+        <span class="glyphicon glyphicon-remove"></span> del
+    </button>
+    <div class="btn-group" dropdown>
+        <button class="btn btn-default dropdown-toggle" dropdown-toggle aria-haspopup="true" aria-expanded="true">
+            <span class="glyphicon glyphicon-th-list"></span> more <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+            <li><a href="javascript:;"><span class="glyphicon glyphicon-cog"></span> 设置</a></li>
+            <li><a href="javascript:;"><span class="glyphicon glyphicon-search"></span> 搜索</a></li>
+        </ul>
+    </div>
+    <button type="button" class="btn btn-default" ng-click="refresh()">
+        <span class="glyphicon glyphicon-refresh"></span>
+    </button>
+    <div class="input-group pull-right col-sm-2">
+        <input type="text" class="form-control" ng-model="query.keywords">
+        <span class="input-group-btn">
+            <button class="btn btn-default" type="button" ng-click="search()"><span class="glyphicon glyphicon-search"></span></button>
+        </span>
+    </div>
+</div>
+
+<div class="clearfix">
+    <table class="table table-bordered yo-table">
+        <thead>
+            <tr>
+                <th width="50"><input type="checkbox" ng-model="selectAll"></th>
+                <th>名称</th>
+                <th>1</th>
+                <th>1</th>
+                <th>1</th>
+                <th>状态</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="row in dataList.list">
+                <td class="text-center"><input type="checkbox" ng-model="row.selected" ng-change="selectItem(row)"></td>
+                <td>{{row.name}}</td>
+                <td>{{row.id}}</td>
+                <td>{{row.count}}</td>
+                <td>{{row.count}}</td>
+                <td>{{row.count}}</td>
+                <td class="operation text-center">
+                    <a href="javascript:;" ng-click="detail(row)">详情</a> | <a href="javascript:;">添加</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div pagination boundary-links="true" total-items="dataList.total" max-size="5" ng-model="currentPage" class="pagination-sm pull-right" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;" ng-change="pageChanged()"></div>
+</div>

@@ -1,0 +1,262 @@
+/* global */
+body, ol, ul, li, dl, dd, dt, table, tr, td, div, p, img, h1, h2, h3, h4, h5, h6, i, var, em, a, input {
+    margin: 0px;
+    padding: 0px;
+    font-family: "Microsoft yahei", Simsun, Arial;
+    font-size: 14px;
+    color: #333;
+}
+html, body {
+	height: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+	font-weight: normal;
+}
+h3 {
+	font-size: 18px;
+}
+h4 {
+	font-size: 14px;
+}
+a, a:link, a:hover, a:active, a:visited {
+	text-decoration: none;
+	cursor: pointer;
+}
+[class^="icon-"] {
+	display: inline-block;
+	width: 14px;
+	height: 14px;
+	margin-top: 1px;
+	line-height: 14px;
+}
+.main-content {
+	min-height: 760px;
+}
+.main-title {
+	line-height: 40px;
+	margin: 10px 0;
+}
+.yo-btns {
+	margin: 15px 0;
+}
+.yo-table {
+	font-size: 12px;
+}
+.yo-table thead th {
+	text-align: center;
+	color: #3685d3;
+}
+.yo-table .operation a {
+	color: #3685d3;
+}
+
+/* bootstrap复写 */
+.btn, .form-control, .input-group-addon, .modal-content {
+	border-radius: 0;
+}
+
+/* tools */
+.absol {
+	position: absolute;
+}
+.rela {
+	position: relative;
+}
+
+/* header */
+.navbar {
+	margin-bottom: 0;
+	width: 100%;
+	background: #1b242f;
+	border: none;
+	border-radius: 0;
+}
+.navbar-header .logo {
+	width: 120px;
+	background: url(http://placehold.it/120x40) 0 center no-repeat;
+	margin-left: 15px;
+}
+.navbar-header .version {
+	color: #b6c4d4;
+	text-indent: 10px;
+	font-size: 12px;
+	margin-top: 24px;
+}
+.navbar-header .side-open {
+	width: 16px;
+	height: 50px;
+	line-height: 50px;
+	margin-left: 5px;
+    color: #fff;
+    font-size: 16px;
+}
+
+.nav-right .nav-user:hover{
+	background-color: #414d69;
+}
+.chevron-down {
+	width: 14px;
+  	height: 10px;
+  	background: url(../img/down.png) -4px -7px no-repeat;
+}
+.nav-right .nav-user:hover > div {
+	display: block;
+}
+.nav-right .nav-user:hover > .chevron-down
+{
+	background-position: -4px -26px;
+}
+.nav-right .help-link {
+	color: #b6c4d4;
+	padding: 15px 20px;
+}
+.nav-right .nav-user {
+	color: #b6c4d4;
+	padding: 15px 20px;
+}
+
+.nav-right .nav-user > div {
+	display: none;
+    top: 50px; 
+    left: 0;
+    z-index: 100;
+    background-color: #fff;
+    border: 1px solid #b6c4d4;
+    border-top: 0;
+    width: 100%;
+}
+.nav-right .nav-user > div a {
+	display: block;
+  	color: #1b242f;
+  	line-height: 40px;
+  	padding: 0 20px;
+} 
+.nav-right .nav-user span {
+	display: inline-block;
+}
+/* sidebar */
+.sidebar {
+	width: 190px;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	background-color: #262f3d;
+}
+.sidebar .nav-pills > li > a {
+	border-radius: 0;
+	color: #b7c6d7;
+}
+.sidebar .nav-pills > li > a > span {
+	padding-left: 15px;
+}
+.sidebar .nav-stacked>li+li {
+	margin-top: 0;
+}
+.sidebar .nav-pills>li.active>a,.sidebar .nav-pills>li.active>a:focus,.sidebar .nav-pills>li.active>a:hover,
+.sidebar .nav>li>a:focus,.sidebar .nav>li>a:hover {
+	background-color: #414d69;
+	color: #fff;
+}
+.icon-yo-nav {
+	width: 26px;
+	height: 26px;
+	background-image: url(../img/nav.png);
+	background-repeat: no-repeat;
+	vertical-align: middle;
+}
+.yo-home {
+	background-position: 0 0;
+}
+.active .yo-home {
+	background-position: -26px 0;
+}
+.yo-host {
+	background-position: 0 -26px;
+}
+.active .yo-host {
+	background-position: -26px -26px;
+}
+.yo-disk {
+	background-position: 0 -52px;
+}
+.active .yo-disk {
+	background-position: -26px -52px;
+}
+.yo-load {
+	background-position: 0 -78px;
+}
+.active .yo-load {
+	background-position: -26px -78px;
+}
+.yo-db {
+	background-position: 0 -104px;
+}
+.active .yo-db {
+	background-position: -26px -104px;
+}
+.yo-memory {
+	background-position: 0 -130px;
+}
+.active .yo-memory {
+	background-position: -26px -130px;
+}
+.yo-protection {
+	background-position: 0 -156px;
+}
+.active .yo-protection {
+	background-position: -26px -156px;
+}
+.yo-cdn {
+	background-position: 0 -182px;
+}
+.active .yo-cdn {
+	background-position: -26px -182px;
+}
+.yo-personal {
+	background-position: 0 -208px;
+}
+.active .yo-personal {
+	background-position: -26px -208px;
+}
+.yo-paylist {
+	background-position: 0 -234px;
+}
+.active .yo-paylist {
+	background-position: -26px -234px;
+}
+.yo-lync {
+	background-position: 0 -260px;
+}
+a:hover .yo-lync {
+	background-position: -26px -260px;
+}
+.yo-phone {
+	background-position: 0 -286px;
+}
+a:hover .yo-phone {
+	background-position: -26px -286px;
+}
+.sidebar-bottom {
+	width: 100%;
+	bottom: 0;
+}
+.sidebar-bottom > a {
+	width: 94.5px;
+	height: 40px;
+	line-height: 40px;
+	border-top: solid 1px #5a6279;
+}
+.sidebar-bottom > a:first-child {
+	border-right: solid 1px #5a6279;
+}
+.sidebar-bottom > a.small {
+	width: 100%;
+}
+.sidebar-bottom > a.small:first-child {
+	border-right-width: 0;
+}
+/* right content */
+.right-content {
+	margin-left: 190px;
+}

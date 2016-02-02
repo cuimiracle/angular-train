@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <title></title>
+    <!-- vendor CSS -->
+    <link rel="stylesheet" href="../lib/bootstrap/dist/css/bootstrap.min.css">
+    <!-- project core CSS -->
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+<div class="navbar navbar-default" role="navigation">
+    <div class="navbar-header clearfix">
+        <a ui-sref="home" class="navbar-brand logo"></a>
+        <span class="pull-left version">ver 2.0</span>
+        <a href="javascript:;" side-collapse close="coll" class="glyphicon glyphicon-menu-hamburger pull-left side-open"></a>
+    </div>
+    <div class="clearfix nav-right">
+        <div class="pull-right nav-user rela">
+            <span class="glyphicon glyphicon-user"></span>&nbsp;<span>test@yovole.com</span> <span class="chevron-down"></span>
+            <div class="absol">
+                <a href="javascript:;" class="text-right logout"><span class="glyphicon glyphicon-log-out"></span> 退出</a>
+            </div>
+        </div>
+        <a class="pull-right help-link"><span class="glyphicon glyphicon-question-sign"></span>&nbsp;帮助中心</a>
+    </div>
+
+</div>
+<div class="rela main-content">
+    <div class="absol sidebar">
+        <ul class="nav nav-pills nav-stacked">
+            <li ng-class="{active: $state.includes('home')}" tips message="首页" direc="right" close="coll">
+                <a ui-sref="home">
+                    <i class="icon-yo-nav yo-home"></i>
+                    <span>首页</span>
+                </a>
+            </li>
+            <li ng-class="{active: $state.includes('host')}" tips message="item1" direc="right" close="coll">
+                <a ui-sref="host">
+                    <i class="icon-yo-nav yo-host"></i>
+                    <span>item1</span>
+                </a>
+            </li>
+        </ul>
+        <div class="sidebar-bottom absol clearfix">
+            <a href="javascript:void(0);" class="text-center pull-left" ng-class="{small: !coll}" tips message="客服咨询" direc="{{ coll ? 'top' : 'right' }}" color="#fd8016">
+                <i class="icon-yo-nav yo-lync"></i>
+            </a>
+            <a href="javascript:void(0);" class="text-center pull-left" ng-class="{small: !coll}" tips message="咨询热线" direc="{{ coll ? 'top' : 'right' }}" color="#fd8016">
+                <i class="icon-yo-nav yo-phone"></i>
+            </a>
+        </div>
+    </div>
+    <div class="right-content">
+        <div class="container-fluid" ui-view></div>
+    </div>
+</div>
+<div ng-include="'./core/footer.html'"></div>
+
+<!-- vendor -->
+<!--[if lte IE 8]>
+<script src="../node_modules/es5-shim/es5-shim.min.js"></script>
+<script src="../node_modules/es5-shim/es5-sham.min.js"></script>
+<script src="../lib/respond.min.js"></script>
+<![endif]-->
+<script src="../lib/jquery/dist/jquery.min.js"></script>
+<script src="../lib/angular/angular.min.js"></script>
+<script src="../lib/angular-ui-router/release/angular-ui-router.min.js"></script>
+<script src="../lib/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+<script src="../lib/angular/angular-locale_zh-cn.js"></script>
+<!-- main -->
+<script src="../modules/config.js"></script>
+<script src="../modules/application.js"></script>
+<!-- core -->
+<script src="../modules/core/core.module.js"></script>
+<script src="../modules/core/config/core.routes.js"></script>
+<script src="../modules/core/directives/datepicker.directive.js"></script>
+<script src="../modules/core/directives/sidebar.directive.js"></script>
+<script src="../modules/core/services/del.service.js"></script>
+<!-- host -->
+<script src="../modules/host/host.module.js"></script>
+<script src="../modules/host/config/host.routes.js"></script>
+<script src="../modules/host/controller/host.ctrl.js"></script>
+</body>
+</html>

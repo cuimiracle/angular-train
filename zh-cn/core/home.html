@@ -1,0 +1,23 @@
+<h3 class="main-title">Home</h3>
+<div style="width: 250px;">
+	<div yodatepicker date="query.date" max-date="maxDate" format="" disabled="true"></div>
+</div>
+<div class="clearfix">
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th><input type="checkbox" ng-model="selectAll"></th>
+				<th>ID</th>
+				<th>name</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="row in dataList.list">
+				<td><input type="checkbox" ng-model="row.selected" ng-change="selectItem(row)"></td>
+				<td>{{row.id}}</td>
+				<td>{{row.name}}</td>
+			</tr>
+		</tbody>
+	</table>
+	<div pagination boundary-links="true" total-items="dataList.total" max-size="5" ng-model="currentPage" class="pagination-sm pull-right" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;" ng-change="pageChanged()"></div>
+</div>
